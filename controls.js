@@ -1,31 +1,52 @@
 const id = $('.id')
 const question = $('.question');
 const next = $('.next');
+const start = $('.start');
+const welcome = $('.welcome');
 const finish = $('.finish');
+const radio = $('label.btn')
 const show = $('.show');
 const quiz = $('.quiz');
 const results = $('.results');
 const warning = $('.warning');
 const options = $("input[name='options']:checked");
 const paginationLink = $('td>a');
+let myChart;
+
+function startQuiz() {
+    if (localStorage.personName != '' && typeof (localStorage.personName) != 'undefined') {
+        quiz.removeClass('hidden');
+        welcome.addClass('hidden');
+    }
+}
+
+
+start.on('click', function () {
+    quiz.removeClass('hidden');
+    welcome.addClass('hidden');
+    localStorage.setItem("personName", $('#personName').val());
+})
+
+radio.on('click', function () {
+    setTimeout(function () { pushAnswer(i), console.log('push') }, 50)
+})
 
 next.on('click', function () {
-    pushAnswer(i);
-    i++;        
-    i < content.length ? (showQuestion(i), setPageState(i)) : (setPageState(i), i= 0, showQuestion(i));
+    i++;
+    i < content.length ? (showQuestion(i), setPageState(i)) : (setPageState(i), i = 0, showQuestion(i));
 })
 
 paginationLink.on('click', function () {
-    i = parseInt(this.text)-1;
+    i = parseInt(this.text) - 1;
     showQuestion(i);
-    setRadio(i);    
+    setRadio(i);
 })
 
 finish.on('click', function () {
     results.removeClass('hidden');
     quiz.addClass('hidden');
-    $(function () { 
-        var myChart = Highcharts.chart('results__chart', {
+    $(function () {
+        myChart = Highcharts.chart('results__chart', {
             chart: {
                 type: 'bar'
             },
@@ -36,8 +57,8 @@ finish.on('click', function () {
                 categories: ['Общая интернальность (Ио)', 'в области достижений (Ид)', ' в области неудач (Ин)', 'в семейных отношениях (Ис)', 'в области производственных отно­шении (Ип)', 'в области межличностных отноше­ний (Им)', ' в отношении здоровья и болезни (Из)']
             },
             series: [{
-                name: 'User',
-                data: [evaluateCommon(),evaluateArchievements(),evaluateFailures(),evaluateFamily(),evaluateProduction(),evaluateInterpersonal(),evaluateHealth()]
+                name: ' ',
+                data: [evaluateCommon(), evaluateArchievements(), evaluateFailures(), evaluateFamily(), evaluateProduction(), evaluateInterpersonal(), evaluateHealth()]
             }]
         });
     });

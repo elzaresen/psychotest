@@ -14,18 +14,9 @@ body * {
     color: white;
     z-index: 2
 }
-input#options{
-    position: relative;
+.skipped{
+    color: #ccc;
 }
-.red{
-    color: red;
-}
-.red:hover, .red:active, .red:focus{
-    color: red;
-}
-.green{
-    color: green;
-}
-.green:hover, .green:active, .green:focus{
-    color: green;
+.skipped:hover, .skipped:active, .skipped:focus{
+    color: #ccc;
 }

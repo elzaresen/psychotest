@@ -1,6 +1,7 @@
 let completed = false;
 let i = 0;
 
+
 function showQuestion(page) {
     checkCompletion();        
     $(':radio').parent().removeClass('active')
@@ -15,16 +16,16 @@ function setRadio(page){
         $(':radio[value="' + answers[page].value + '"]').prop('checked', true)
         $(':radio[value="' + answers[page].value + '"]').parent().addClass('active')
     }
+    else{
+        refreshRadio();
+    }
 }
 
 function setPageState(page){
     if(typeof(answers.filter(obj => obj.questionNumber === page)[0].value) == 'undefined'){
-        $('a[id=' + (page) + ']').addClass('red')
-        console.warn('not answered')
+        $('a[id=' + (page) + ']').addClass('skipped')
     } else{
-        $('a[id=' + page + ']').removeClass('red')
-        $('a[id=' + page + ']').addClass('green')
-        console.log('answered')
+        $('a[id=' + page + ']').removeClass('skipped')
     }
 }
 
@@ -43,7 +44,6 @@ function pushAnswer(page) {
             'value': $("input[name='options']:checked").val()
         });
     }
-    refreshRadio();
 }
 
 function checkCompletion(){

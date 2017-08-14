@@ -1,17 +1,105 @@
-const commonHigh = "Высокий показатель по этой шкале соответствует высокому уровню субъективного контро­ля над любыми значимыми ситуациями: интернальный контроль, интернальная личность. Такие люди считают, что большинство важных событий в их жизни есть результат их собственных действий, что они могут ими управлять, и, таким образом, они чув­ствуют свою собственную ответственность за эти события и за то, как складывается их жизнь в целом. Обобщение различных экспериментальных данных позволяет говорить об интерналах как о бо­лее уверенных в себе, более спокойных и благожелательных, более популярных в сравнении с экстерналами. Их отличает более пози­тивная система отношений к миру и большая осознанность смысла и целей жизни."
-const commonLow = "Низкий показатель по этой шкале соответствует низкому уров­ню субъективного контроля: экстернальный контроль, экстернальная личность. Такие люди не видят связи между своими действия­ми и значимыми для них событиями их жизни, не считают себя способными контролировать их развитие. Они полагают, что большинство событий их жизни является результатом случая или действия других людей. Обобщение различных экспериментальных данных позволяет говорить об экстерналах как о людях с повышенной тревожностью, обеспокоенностью. Их отличает конформность, меньшая терпимость к другим и повышенная агрессивность, меньшая популярность в сравнении с интерналами."
-const archievementsHigh = "Высокие показатели по этой шкале соответствуют высокому уровню субъективного контроля над эмоционально положительными событиями и ситуациями. Такие люди считают, что они сами добились всего того хорошего, что было и есть в их жизни, и что они способны с успе­хом преследовать свои цели в будущем."
-const archievementsLow = "Низкие показатели по шка­ле свидетельствуют о том, что человек приписывает свои успехи, достижения и радости внешним обстоятельствам – везению, счаст­ливой судьбе или помощи других людей."
-const failuresHigh = "Высокие показатели по этой шкале говорят о развитом чувстве субъективного контроля по отношению к отрицательным событиям и ситуациям, что проявляется в склонности обвинять самого себя в разнообраз­ных неприятностях и страданиях."
-const failuresLow = "Низкие показатели свидетель­ствуют о том, что человек склонен приписывать ответственность за подобные события другим людям или считать их результатом невезения."
-const familyHigh = "Высо­кие показатели означают, что человек считает себя ответственным за события, происходящие в его семейной жизни."
-const familyLow = "Низкие указыва­ют на то, что субъект считает не себя, а своих партнеров причиной значимых ситуаций, возникающих в его семье."
-const productionHigh = "Высокие показатели свидетельствует и том, что че­ловек считает свои действия важным фактором организации соб­ственной производственной деятельности, складывающихся отно­шении в коллективе, своего продвижения и т.д."
-const productionLow = "Низкие указывают на то, что человек склонен приписывать более важное значе­ние внешним обстоятельствам — руководству, товарищам по рабо­те, везению-невезению."
-const interpersonalHigh = "Высокие показатели свидетельствуют о том, что человек считает именно себя ответственным за построение межличностных отношений с окружающими."
-const interpersonalLow = "Низкие указывают на то, что человек склонен приписывать более важное значение в этом процессе обстоятельствам, случаю или окружающим его людям."
-const healthHigh = "Высокие показатели свидетельствуют о том, что человек считает себя во многом ответственным за свое здоровье: если он болен, то обвиняет в этом себя и полагает, что выздоровление во многом за­висит от его действий."
-const healthLow = "Человек с низкими показателями по этой шкале считает болезнь и здоровье результатом случая и надеется на то, что выздоровление придет в результате действий других лю­дей, прежде всего врачей."
+const commonDescription = [
+    {'result': 0, 'descritption': 'common is: 0'},
+    {'result': 1, 'descritption': 'common is: 1'},
+    {'result': 2, 'descritption': 'common is: 2'},
+    {'result': 3, 'descritption': 'common is: 3'},
+    {'result': 4, 'descritption': 'common is: 4'},
+    {'result': 5, 'descritption': 'common is: 5'},
+    {'result': 6, 'descritption': 'common is: 6'},
+    {'result': 7, 'descritption': 'common is: 7'},
+    {'result': 8, 'descritption': 'common is: 8'},
+    {'result': 9, 'descritption': 'common is: 9'},
+    {'result': 10, 'descritption': 'common is: 10'},
+]
+
+const archievementsDescription = [
+    {'result': 0, 'descritption': 'achievements is: 0'},
+    {'result': 1, 'descritption': 'achievements is: 1'},
+    {'result': 2, 'descritption': 'achievements is: 2'},
+    {'result': 3, 'descritption': 'achievements is: 3'},
+    {'result': 4, 'descritption': 'achievements is: 4'},
+    {'result': 5, 'descritption': 'achievements is: 5'},
+    {'result': 6, 'descritption': 'achievements is: 6'},
+    {'result': 7, 'descritption': 'achievements is: 7'},
+    {'result': 8, 'descritption': 'achievements is: 8'},
+    {'result': 9, 'descritption': 'achievements is: 9'},
+    {'result': 10, 'descritption': 'achievements is: 10'},
+]
+
+const failureDescription = [
+    {'result': 0, 'descritption': 'failures is: 0'},
+    {'result': 1, 'descritption': 'failures is: 1'},
+    {'result': 2, 'descritption': 'failures is: 2'},
+    {'result': 3, 'descritption': 'failures is: 3'},
+    {'result': 4, 'descritption': 'failures is: 4'},
+    {'result': 5, 'descritption': 'failures is: 5'},
+    {'result': 6, 'descritption': 'failures is: 6'},
+    {'result': 7, 'descritption': 'failures is: 7'},
+    {'result': 8, 'descritption': 'failures is: 8'},
+    {'result': 9, 'descritption': 'failures is: 9'},
+    {'result': 10, 'descritption': 'failures is: 10'},
+]
+
+const familyDescription = [
+    {'result': 0, 'descritption': 'family is: 0'},
+    {'result': 1, 'descritption': 'family is: 1'},
+    {'result': 2, 'descritption': 'family is: 2'},
+    {'result': 3, 'descritption': 'family is: 3'},
+    {'result': 4, 'descritption': 'family is: 4'},
+    {'result': 5, 'descritption': 'family is: 5'},
+    {'result': 6, 'descritption': 'family is: 6'},
+    {'result': 7, 'descritption': 'family is: 7'},
+    {'result': 8, 'descritption': 'family is: 8'},
+    {'result': 9, 'descritption': 'family is: 9'},
+    {'result': 10, 'descritption': 'family is: 10'},
+]
+
+const productionDescription = [
+    {'result': 0, 'descritption': 'production is: 0'},
+    {'result': 1, 'descritption': 'production is: 1'},
+    {'result': 2, 'descritption': 'production is: 2'},
+    {'result': 3, 'descritption': 'production is: 3'},
+    {'result': 4, 'descritption': 'production is: 4'},
+    {'result': 5, 'descritption': 'production is: 5'},
+    {'result': 6, 'descritption': 'production is: 6'},
+    {'result': 7, 'descritption': 'production is: 7'},
+    {'result': 8, 'descritption': 'production is: 8'},
+    {'result': 9, 'descritption': 'production is: 9'},
+    {'result': 10, 'descritption': 'production is: 10'},
+]
+const interpersonalDescription = [
+    {'result': 0, 'descritption': 'interpersonal is: 0'},
+    {'result': 1, 'descritption': 'interpersonal is: 1'},
+    {'result': 2, 'descritption': 'interpersonal is: 2'},
+    {'result': 3, 'descritption': 'interpersonal is: 3'},
+    {'result': 4, 'descritption': 'interpersonal is: 4'},
+    {'result': 5, 'descritption': 'interpersonal is: 5'},
+    {'result': 6, 'descritption': 'interpersonal is: 6'},
+    {'result': 7, 'descritption': 'interpersonal is: 7'},
+    {'result': 8, 'descritption': 'interpersonal is: 8'},
+    {'result': 9, 'descritption': 'interpersonal is: 9'},
+    {'result': 10, 'descritption': 'interpersonal is: 10'},
+]
+const healthDescription = [
+    {'result': 0, 'descritption': 'health is: 0'},
+    {'result': 1, 'descritption': 'health is: 1'},
+    {'result': 2, 'descritption': 'health is: 2'},
+    {'result': 3, 'descritption': 'health is: 3'},
+    {'result': 4, 'descritption': 'health is: 4'},
+    {'result': 5, 'descritption': 'health is: 5'},
+    {'result': 6, 'descritption': 'health is: 6'},
+    {'result': 7, 'descritption': 'health is: 7'},
+    {'result': 8, 'descritption': 'health is: 8'},
+    {'result': 9, 'descritption': 'health is: 9'},
+    {'result': 10, 'descritption': 'health is: 10'},
+]
+
+
+
+
+
+
+
 
 function evaluateCommon(){
     common = parseInt(answers[1].value)+parseInt(answers[3].value)+parseInt(answers[10].value)+parseInt(answers[11].value)+parseInt(answers[12].value)+parseInt(answers[14].value)+parseInt(answers[15].value)+parseInt(answers[16].value)+parseInt(answers[18].value)+parseInt(answers[19].value)+parseInt(answers[21].value)+parseInt(answers[24].value)+parseInt(answers[26].value)+parseInt(answers[28].value)+parseInt(answers[30].value)+parseInt(answers[31].value)+parseInt(answers[33].value)+parseInt(answers[35].value)+parseInt(answers[36].value)+parseInt(answers[38].value)+parseInt(answers[41].value)+parseInt(answers[43].value) + (-1)*(parseInt(answers[0].value)+parseInt(answers[2].value)+parseInt(answers[4].value)+parseInt(answers[5].value)+parseInt(answers[6].value)+parseInt(answers[7].value)+parseInt(answers[8].value)+parseInt(answers[9].value)+parseInt(answers[13].value)+parseInt(answers[17].value)+parseInt(answers[20].value)+parseInt(answers[22].value)+parseInt(answers[23].value)+parseInt(answers[25].value)+parseInt(answers[27].value)+parseInt(answers[29].value)+parseInt(answers[32].value)+parseInt(answers[34].value)+parseInt(answers[37].value)+parseInt(answers[39].value)+parseInt(answers[40].value)+parseInt(answers[42].value));
@@ -106,11 +194,22 @@ function evaluateHealth(){
 }
 
 function evaluationDescription(){
-    evaluateCommon() <= 5 ? $('#common').append(commonLow) :  $('#common').append(commonHigh)
-    evaluateArchievements() <= 5 ? $('#archievements').append(archievementsLow) :  $('#archievements').append(archievementsHigh)
-    evaluateFailures() <= 5 ? $('#failure').append(failuresLow) :  $('#failure').append(failuresHigh)
-    evaluateFamily() <= 5 ? $('#family').append(familyLow) :  $('#family').append(familyHigh)
-    evaluateProduction() <= 5 ? $('#production').append(productionLow) :  $('#production').append(productionHigh)
-    evaluateInterpersonal() <= 5 ? $('#interpersonal').append(interpersonalLow) :  $('#interpersonal').append(interpersonalHigh)
-    evaluateHealth() <= 5 ? $('#health').append(healthLow) :  $('#health').append(healthHigh)
+    $('#common').append(commonDescription[evaluateCommon()].descritption)
+    $('#archievements').append(archievementsDescription[evaluateArchievements()].descritption)
+    $('#failure').append(failureDescription[evaluateFailures()].descritption)
+    $('#family').append(familyDescription[evaluateFamily()].descritption)
+    $('#production').append(productionDescription[evaluateProduction()].descritption)
+    $('#interpersonal').append(interpersonalDescription[evaluateInterpersonal()].descritption)
+    $('#health').append(healthDescription[evaluateHealth()].descritption)
+
+
+
+
+    // evaluateCommon() <= 5 ? $('#common').append(commonLow) :  $('#common').append(commonHigh)
+    // evaluateArchievements() <= 5 ? $('#archievements').append(archievementsLow) :  $('#archievements').append(archievementsHigh)
+    // evaluateFailures() <= 5 ? $('#failure').append(failuresLow) :  $('#failure').append(failuresHigh)
+    // evaluateFamily() <= 5 ? $('#family').append(familyLow) :  $('#family').append(familyHigh)
+    // evaluateProduction() <= 5 ? $('#production').append(productionLow) :  $('#production').append(productionHigh)
+    // evaluateInterpersonal() <= 5 ? $('#interpersonal').append(interpersonalLow) :  $('#interpersonal').append(interpersonalHigh)
+    // evaluateHealth() <= 5 ? $('#health').append(healthLow) :  $('#health').append(healthHigh)
 }
