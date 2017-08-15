@@ -22,10 +22,12 @@ function setRadio(page){
 }
 
 function setPageState(page){
-    if(typeof(answers.filter(obj => obj.questionNumber === page)[0].value) == 'undefined'){
+    if(answers.filter(obj => obj.questionNumber === page)[0].value == ''){
         $('a[id=' + (page) + ']').addClass('skipped')
+        console.log(page + ' skipped')
     } else{
-        $('a[id=' + page + ']').removeClass('skipped')
+        $('a[id=' + (page) + ']').removeClass('skipped')
+        console.log(page + ' answered')
     }
 }
 
@@ -50,5 +52,6 @@ function checkCompletion(){
     for(s=0 ; s<answers.length; s++){
         answers[s].value=='' | typeof(answers[s].value) == 'undefined' ? completed = false : completed = true
     }
-    completed == true && (next.addClass('hidden'), finish.removeClass('hidden'));
+    completed == true && (next.addClass('hidden'), pagination.addClass('hidden'), answersWrapper.addClass('hidden'), questionsWrapper.addClass('hidden'), finish.removeClass('hidden'));
+    
 }

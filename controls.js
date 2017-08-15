@@ -10,7 +10,10 @@ const quiz = $('.quiz');
 const results = $('.results');
 const warning = $('.warning');
 const options = $("input[name='options']:checked");
-const paginationLink = $('td>a');
+const paginationLink = $('li>a');
+const pagination = $('.thepagination');
+const questionsWrapper = $('.questions-wrapper');
+const answersWrapper = $('.answers-wrapper');
 let myChart;
 
 function startQuiz() {
@@ -57,10 +60,12 @@ finish.on('click', function () {
                 categories: ['Общая интернальность (Ио)', 'в области достижений (Ид)', ' в области неудач (Ин)', 'в семейных отношениях (Ис)', 'в области производственных отно­шении (Ип)', 'в области межличностных отноше­ний (Им)', ' в отношении здоровья и болезни (Из)']
             },
             series: [{
-                name: ' ',
+                showInLegend: false,
+                name: localStorage.getItem("personName"),
                 data: [evaluateCommon(), evaluateArchievements(), evaluateFailures(), evaluateFamily(), evaluateProduction(), evaluateInterpersonal(), evaluateHealth()]
             }]
         });
     });
     evaluationDescription();
+    setTimeout(setBlank, 2000);
 })

@@ -105,7 +105,7 @@ function evaluateCommon(){
     common = parseInt(answers[1].value)+parseInt(answers[3].value)+parseInt(answers[10].value)+parseInt(answers[11].value)+parseInt(answers[12].value)+parseInt(answers[14].value)+parseInt(answers[15].value)+parseInt(answers[16].value)+parseInt(answers[18].value)+parseInt(answers[19].value)+parseInt(answers[21].value)+parseInt(answers[24].value)+parseInt(answers[26].value)+parseInt(answers[28].value)+parseInt(answers[30].value)+parseInt(answers[31].value)+parseInt(answers[33].value)+parseInt(answers[35].value)+parseInt(answers[36].value)+parseInt(answers[38].value)+parseInt(answers[41].value)+parseInt(answers[43].value) + (-1)*(parseInt(answers[0].value)+parseInt(answers[2].value)+parseInt(answers[4].value)+parseInt(answers[5].value)+parseInt(answers[6].value)+parseInt(answers[7].value)+parseInt(answers[8].value)+parseInt(answers[9].value)+parseInt(answers[13].value)+parseInt(answers[17].value)+parseInt(answers[20].value)+parseInt(answers[22].value)+parseInt(answers[23].value)+parseInt(answers[25].value)+parseInt(answers[27].value)+parseInt(answers[29].value)+parseInt(answers[32].value)+parseInt(answers[34].value)+parseInt(answers[37].value)+parseInt(answers[39].value)+parseInt(answers[40].value)+parseInt(answers[42].value));
     if(common >= -133 && common <= -14) { return 1}
     if(common >= -13 && common <= -3) { return 2}
-    if(common >= -2 && common <= 0) { return 3}
+    if(common >= -2 && common <= 10) { return 3}
     if(common >= 10 && common <= 21) { return 4}
     if(common >= 22 && common <= 32) { return 5}
     if(common >= 33 && common <= 44) { return 6}
