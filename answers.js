@@ -56,6 +56,7 @@ function initializeAnswers() {
 
 let answers = initializeAnswers()
 function setBlank() {
+    localStorage.personName = ''
     answers = [
         { 'questionNumber': 1, 'value': '' },
         { 'questionNumber': 2, 'value': '' },

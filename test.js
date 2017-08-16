@@ -3,7 +3,7 @@ let i = 0;
 
 
 function showQuestion(page) {
-    checkCompletion();        
+    checkCompletion();
     $(':radio').parent().removeClass('active')
     $('input[type="radio"]').prop('checked', false);
     id.text(content[page].id);
@@ -11,36 +11,36 @@ function showQuestion(page) {
     setRadio(page);
 }
 
-function setRadio(page){
-    if(typeof(answers[page].value) != 'undefined'){
+function setRadio(page) {
+    if (typeof (answers[page].value) != 'undefined') {
         $(':radio[value="' + answers[page].value + '"]').prop('checked', true)
         $(':radio[value="' + answers[page].value + '"]').parent().addClass('active')
     }
-    else{
+    else {
         refreshRadio();
     }
 }
 
-function setPageState(page){
-    if(answers.filter(obj => obj.questionNumber === page)[0].value == ''){
+function setPageState(page) {
+    if (answers.filter(obj => obj.questionNumber === page)[0].value == '') {
         $('a[id=' + (page) + ']').addClass('skipped')
         console.log(page + ' skipped')
-    } else{
+    } else {
         $('a[id=' + (page) + ']').removeClass('skipped')
         console.log(page + ' answered')
     }
 }
 
-function refreshRadio(){
+function refreshRadio() {
     $('input[type="radio"]').prop('checked', false);
     $('input[type="radio"]').parent().removeClass('active');
 }
 
 function pushAnswer(page) {
-    if(typeof(answers[page]) != 'undefined'){
+    if (typeof (answers[page]) != 'undefined') {
         answers[page].value = $("input[name='options']:checked").val()
     }
-    else{
+    else {
         answers.push({
             'questionNumber': content[page].id,
             'value': $("input[name='options']:checked").val()
@@ -48,10 +48,13 @@ function pushAnswer(page) {
     }
 }
 
-function checkCompletion(){
-    for(s=0 ; s<answers.length; s++){
-        answers[s].value=='' | typeof(answers[s].value) == 'undefined' ? completed = false : completed = true
+function checkCompletion() {
+    for (var f = 0; f < answers.length; f++) {
+        if (answers[f].value == '') {
+            completed =  false;
+        }
+        else completed = true;
     }
     completed == true && (next.addClass('hidden'), pagination.addClass('hidden'), answersWrapper.addClass('hidden'), questionsWrapper.addClass('hidden'), finish.removeClass('hidden'));
-    
+
 }

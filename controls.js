@@ -48,24 +48,31 @@ paginationLink.on('click', function () {
 finish.on('click', function () {
     results.removeClass('hidden');
     quiz.addClass('hidden');
-    $(function () {
-        myChart = Highcharts.chart('results__chart', {
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: 'Уровень субъективного контроля'
-            },
-            xAxis: {
-                categories: ['Общая интернальность (Ио)', 'в области достижений (Ид)', ' в области неудач (Ин)', 'в семейных отношениях (Ис)', 'в области производственных отно­шении (Ип)', 'в области межличностных отноше­ний (Им)', ' в отношении здоровья и болезни (Из)']
-            },
-            series: [{
-                showInLegend: false,
-                name: localStorage.getItem("personName"),
-                data: [evaluateCommon(), evaluateArchievements(), evaluateFailures(), evaluateFamily(), evaluateProduction(), evaluateInterpersonal(), evaluateHealth()]
-            }]
+    try {
+        $(function () {
+            myChart = Highcharts.chart('results__chart', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Уровень субъективного контроля'
+                },
+                xAxis: {
+                    categories: ['Общая интернальность (Ио)', 'в области достижений (Ид)', ' в области неудач (Ин)', 'в семейных отношениях (Ис)', 'в области производственных отно­шении (Ип)', 'в области межличностных отноше­ний (Им)', ' в отношении здоровья и болезни (Из)']
+                },
+                series: [{
+                    showInLegend: false,
+                    name: localStorage.getItem("personName"),
+                    data: [evaluateCommon(), evaluateArchievements(), evaluateFailures(), evaluateFamily(), evaluateProduction(), evaluateInterpersonal(), evaluateHealth()]
+                }]
+            });
         });
-    });
-    evaluationDescription();
-    setTimeout(setBlank, 2000);
+        evaluationDescription();
+        setTimeout(setBlank, 2000);
+
+    } catch (err) {
+        showQuestion(1);
+        alert(err);
+    }
+
 })
