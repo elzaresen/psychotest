@@ -1,6 +1,12 @@
 body * {
     transition: all .3s ease-in-out;
 }
+body, .btn{
+    font-size: 1.3em;
+}
+.h3{
+    font-size: 2em;
+}
 .hidden{
     display: none;
 }

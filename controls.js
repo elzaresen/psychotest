@@ -46,8 +46,7 @@ paginationLink.on('click', function () {
 })
 
 finish.on('click', function () {
-    results.removeClass('hidden');
-    quiz.addClass('hidden');
+    
     try {
         $(function () {
             myChart = Highcharts.chart('results__chart', {
@@ -71,8 +70,11 @@ finish.on('click', function () {
         setTimeout(setBlank, 2000);
 
     } catch (err) {
-        showQuestion(1);
-        alert(err);
+        alert('Произошла ошибка. Сейчас вы вернетесь к опроснику, проверьте ответили ли вы на все вопросы.');
+        answers[43].value = '';
+        next.removeClass('hidden'), pagination.removeClass('hidden'), answersWrapper.removeClass('hidden'), questionsWrapper.removeClass('hidden'), finish.addClass('hidden')
     }
+    
+        
 
 })
