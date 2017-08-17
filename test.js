@@ -52,10 +52,9 @@ function checkCompletion() {
     for (var f = 0; f < answers.length; f++) {
         if (answers[f].value == '') {
             completed =  false;
-            break;
+            // break;
         }
         else completed = true;
     }
-    completed == true && (next.addClass('hidden'), pagination.addClass('hidden'), answersWrapper.addClass('hidden'), questionsWrapper.addClass('hidden'), finish.removeClass('hidden'));
-
+    completed == true && (next.addClass('hidden'), pagination.addClass('hidden'), answersWrapper.addClass('hidden'), questionsWrapper.addClass('hidden'), finish.removeClass('hidden'), console.log('done'));
 }

@@ -68,13 +68,11 @@ finish.on('click', function () {
         });
         evaluationDescription();
         setTimeout(setBlank, 2000);
+        quiz.addClass('hidden'); results.removeClass('hidden')
 
     } catch (err) {
+        next.removeClass('hidden'), pagination.removeClass('hidden'), answersWrapper.removeClass('hidden'), questionsWrapper.removeClass('hidden'), finish.addClass('hidden')
         alert('Произошла ошибка. Сейчас вы вернетесь к опроснику, проверьте ответили ли вы на все вопросы.');
         answers[43].value = '';
-        next.removeClass('hidden'), pagination.removeClass('hidden'), answersWrapper.removeClass('hidden'), questionsWrapper.removeClass('hidden'), finish.addClass('hidden')
     }
-    
-        
-
 })
