@@ -52,7 +52,7 @@ function checkCompletion() {
     for (var f = 0; f < answers.length; f++) {
         if (answers[f].value == '') {
             completed =  false;
-            // break;
+            break;
         }
         else completed = true;
     }
