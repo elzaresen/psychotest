@@ -1,7 +1,6 @@
 let completed = false;
 let i = 0;
 
-
 function showQuestion(page) {
     checkCompletion();
     $(':radio').parent().removeClass('active')
@@ -57,4 +56,29 @@ function checkCompletion() {
         else completed = true;
     }
     completed == true && (next.addClass('hidden'), pagination.addClass('hidden'), answersWrapper.addClass('hidden'), questionsWrapper.addClass('hidden'), finish.removeClass('hidden'), console.log('done'));
+}
+
+function revealAnswered(){
+    for (var f = 1; f <= answers.length; f++) {
+        setPageState(f);
+    }
+}
+
+function nextEmpty() {
+    if(answers[i].value == ''){
+        i++;
+    }
+    while (answers[i].value != ''){
+        if(i==content.length-1){
+            i=0;
+        }
+        else{
+            i++;
+            setPageState(i);
+            console.log(i)
+        }
+        
+    }
+    showQuestion(i);
+    return i;
 }
