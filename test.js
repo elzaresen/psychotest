@@ -64,20 +64,28 @@ function revealAnswered(){
     }
 }
 
+
+
+
 function nextEmpty() {
-    if(i<content.length-1){
-        while (answers[i].value != '' && i<content.length){
-            if(i<content.length){
-                i++;
-                revealAnswered();
-                console.log(i);
+    try{
+        if(i<content.length-1){
+            while (answers[i].value != '' && i<content.length){
+                if(i<content.length){
+                    i++;
+                    revealAnswered();
+                    console.log(i);
+                }
             }
         }
+        else{
+            i=0;
+            nextEmpty();
+        }
     }
-    else{
-        i=0
+    catch(e){
+        i=43;
     }
-    
     revealAnswered();
     showQuestion(i);
 }
