@@ -23,10 +23,10 @@ function setRadio(page) {
 function setPageState(page) {
     if (answers.filter(obj => obj.questionNumber === page)[0].value == '') {
         $('a[id=' + (page) + ']').removeClass('skipped')
-        console.log(page + ' skipped')
+        // console.log(page + ' skipped')
     } else {
         $('a[id=' + (page) + ']').addClass('skipped')
-        console.log(page + ' answered')
+        // console.log(page + ' answered')
     }
 }
 
@@ -65,20 +65,19 @@ function revealAnswered(){
 }
 
 function nextEmpty() {
-    if(answers[i].value == ''){
-        i++;
-    }
-    while (answers[i].value != ''){
-        if(i==content.length-1){
-            i=0;
+    if(i<content.length-1){
+        while (answers[i].value != '' && i<content.length){
+            if(i<content.length){
+                i++;
+                revealAnswered();
+                console.log(i);
+            }
         }
-        else{
-            i++;
-            setPageState(i);
-            console.log(i)
-        }
-        
     }
+    else{
+        i=0
+    }
+    
+    revealAnswered();
     showQuestion(i);
-    return i;
 }

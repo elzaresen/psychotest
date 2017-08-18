@@ -35,7 +35,7 @@ radio.on('click', function () {
 })
 
 next.on('click', function () {
-    nextEmpty();
+    i++; nextEmpty();
 })
 
 paginationLink.on('click', function () {
